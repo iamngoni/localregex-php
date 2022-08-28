@@ -13,9 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 final class LocalRegexTest extends TestCase {
     public function testIsValidEmailAddress() {
-        // TODO: Fix here
-        // $isValid = LocalRegex::isEmail('iamngoni@modestnerd.co');
-        $isValid = true;
+        $isValid = LocalRegex::isEmail('iamngoni@modestnerd.co');
         $this->assertEquals(
             true,
             $isValid
