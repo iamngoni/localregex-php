@@ -93,4 +93,28 @@ final class LocalRegexTest extends TestCase {
             $isValid
         );
     }
+
+    public function testFormatToCountryCode() : void {
+        $formatted = LocalRegex::formatNumber('0771234567', FormatType::CountryCode);
+        $this->assertEquals(
+            '263771234567',
+            $formatted
+        );
+    }
+
+    public function testFormatToCountryCodePlus() : void {
+        $formatted = LocalRegex::formatNumber('0771234567', FormatType::CountryCodePlus);
+        $this->assertEquals(
+            '+263771234567',
+            $formatted
+        );
+    }
+
+    public function testFormatToRegular() : void {
+        $formatted = LocalRegex::formatNumber('263771234567', FormatType::Regular);
+        $this->assertEquals(
+            '0771234567',
+            $formatted
+        );
+    }
 }

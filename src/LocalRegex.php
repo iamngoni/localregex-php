@@ -11,6 +11,8 @@ namespace Modestnerd\Localregex;
 
 require_once 'Utils.php';
 
+use Modestnerd\Localregex\LocalRegexException;
+
 class LocalRegex
 {
     // private static $emailAddress = '/^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+(.[a-zA-Z]+)*/';
@@ -211,5 +213,30 @@ class LocalRegex
      */
     public static function isPassword($password) : bool {
         return is_valid($password, self::$password);
+    }
+
+    /**
+     * Checks if number is valid and returns in the requested format
+     * 
+     * @param $number
+     * @param $format
+     * @return string
+     * @throws LocalRegexException
+     */
+    public static function formatNumber(string $number, int $format) : string {
+        $isValid = self::isZimMobile($number);
+        if ($isValid) {
+            if ($format == FormatType::CountryCode){
+                return format_country_code($number);
+            } else if ($format == FormatType::CountryCodePlus) {
+                return format_country_code_plus($number);
+            } else if ($format == FormatType::Regular) {
+                return format_regular($number);
+            } else {
+                throw new LocalRegexException('Invalid format type');
+            }
+        } else {
+            throw new LocalRegexException('Invalid mobile number');
+        }
     }
 }
