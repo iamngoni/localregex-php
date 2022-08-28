@@ -1,0 +1,42 @@
+{
+    "name": "modestnerd/localregex",
+    "description": "Regex Patterns",
+    "keywords": [
+        "modestnerd",
+        "localregex"
+    ],
+    "homepage": "https://github.com/modestnerd/localregex",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ngonidzashe Mangudya",
+            "email": "iamngoni@modestnerd.co",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modestnerd\\Localregex\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modestnerd\\Localregex\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
