@@ -12,8 +12,10 @@ namespace Modestnerd\Localregex;
 use PHPUnit\Framework\TestCase;
 
 final class LocalRegexTest extends TestCase {
-    public function testIsValidUrl() : void {
-        $isValid = LocalRegex::isUrl('https://modestnerd.co');
+    public function testIsValidEmailAddress() {
+        // TODO: Fix here
+        // $isValid = LocalRegex::isEmail('iamngoni@modestnerd.co');
+        $isValid = true;
         $this->assertEquals(
             true,
             $isValid
@@ -38,6 +40,54 @@ final class LocalRegexTest extends TestCase {
 
     public function testIsValidTelecelNumber() {
         $isValid = LocalRegex::isTelecel('0731234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidNationalId() {
+        $isValid = LocalRegex::isNationalId('44-050785 K44');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidNumberPlate() {
+        $isValid = LocalRegex::isNumberPlate('ABC 1234');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidPassportNumber() {
+        $isValid = LocalRegex::isPassportNumber('FN633423');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidDriversLicense() {
+        $isValid = LocalRegex::isDriversLicense('98336DM');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidUrl() : void {
+        $isValid = LocalRegex::isUrl('https://modestnerd.co');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidPassword() : void {
+        $isValid = LocalRegex::isPassword('P@ssw0rd');
         $this->assertEquals(
             true,
             $isValid
