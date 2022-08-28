@@ -44,8 +44,248 @@ final class LocalRegexTest extends TestCase {
         );
     }
 
+    public function testIsValidEconetNumberWithCountryCode() {
+        $isValid = LocalRegex::isEconet('263771234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidNetoneNumberWithCountryCode() {
+        $isValid = LocalRegex::isNetone('263711234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidTelecelNumberWithCountryCode() {
+        $isValid = LocalRegex::isTelecel('263731234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidEconetNumberWithCountryCodePlus() {
+        $isValid = LocalRegex::isEconet('+263771234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidNetoneNumberWithCountryCodePlus() {
+        $isValid = LocalRegex::isNetone('+263711234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidTelecelNumberWithCountryCodePlus() {
+        $isValid = LocalRegex::isTelecel('+263731234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidZimMobileNumber() {
+        $isValid = LocalRegex::isZimMobile('0771234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidZimMobileNumberWithCountryCode() {
+        $isValid = LocalRegex::isZimMobile('263771234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsValidZimMobileNumberWithCountryCodePlus() {
+        $isValid = LocalRegex::isZimMobile('+263771234567');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsAfricomNumberWithCountryCodePlus() {
+        $isValid = LocalRegex::isAfricom('+2638644105500');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsAfricomNumberWithCountryCode() {
+        $isValid = LocalRegex::isAfricom('2638644105500');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsAfricomNumber() {
+        $isValid = LocalRegex::isAfricom('08644105500');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsDandemutandeNumberWithCountryCodePlus() {
+        $isValid = LocalRegex::isDandemutande('+2638612003000');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsDandemutandeNumberWithCountryCode() {
+        $isValid = LocalRegex::isDandemutande('2638612003000');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsDandemutandeNumber() {
+        $isValid = LocalRegex::isDandemutande('08612003000');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsLiquidNumberWithCountryCodePlus() {
+        $isValid = LocalRegex::isLiquid('+2638677020251');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsLiquidNumberWithCountryCode() {
+        $isValid = LocalRegex::isLiquid('2638677020251');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsLiquidNumber() {
+        $isValid = LocalRegex::isLiquid('08677020251');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsPowertelNumberWithCountryCodePlus() {
+        $isValid = LocalRegex::isPowertel('+2638611208281');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsPowertelNumberWithCountryCode() {
+        $isValid = LocalRegex::isPowertel('2638611208281');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsPowertelNumber() {
+        $isValid = LocalRegex::isPowertel('08611208281');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsTelcoWithCountryCodePlus() {
+        $isValid = LocalRegex::isTelco('+2638683000000');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsTelcoWithCountryCode() {
+        $isValid = LocalRegex::isTelco('2638683000000');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsTelco() {
+        $isValid = LocalRegex::isTelco('08683000000');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
     public function testIsValidNationalId() {
         $isValid = LocalRegex::isNationalId('44-050785 K44');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsZarnetWithCountryCodePlus() {
+        $isValid = LocalRegex::isZarnet('+2638622009070');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsZarnetWithCountryCode() {
+        $isValid = LocalRegex::isZarnet('2638622009070');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsZarnet() {
+        $isValid = LocalRegex::isZarnet('08622009070');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsTeloneWithCountryCodePlus() {
+        $isValid = LocalRegex::isTelone('+2638688003099');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsTeloneWithCountryCode() {
+        $isValid = LocalRegex::isTelone('2638688003099');
+        $this->assertEquals(
+            true,
+            $isValid
+        );
+    }
+
+    public function testIsTelone() {
+        $isValid = LocalRegex::isTelone('08688003099');
         $this->assertEquals(
             true,
             $isValid
