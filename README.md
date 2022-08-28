@@ -1,10 +1,10 @@
-# Very short description of the package
+# LocalRegex (PHP)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/modestnerd/localregex.svg?style=flat-square)](https://packagist.org/packages/modestnerd/localregex)
 [![Total Downloads](https://img.shields.io/packagist/dt/modestnerd/localregex.svg?style=flat-square)](https://packagist.org/packages/modestnerd/localregex)
 ![GitHub Actions](https://github.com/modestnerd/localregex/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+LocalRegex is a collection of regex patterns particularly tailored for the Zimbabwean environment
 
 ## Installation
 
@@ -15,9 +15,46 @@ composer require modestnerd/localregex
 ```
 
 ## Usage
-
+- all methods return a boolean as the result
 ```php
-// Usage description here
+// Email
+LocalRegex::isEmail($email);
+
+// Mobile Numbers
+LocalRegex::isEconet($number);
+LocalRegex::isTelecel($number);
+LocalRegex::isNetone($number);
+
+// Check if it's either one of the three i.e. Econet, Telecel or Netone
+LocalRegex::isZimMobile($number);
+
+// Check if the mobile number is valid (not tied to Zimbabwe)
+LocalRegex::isMobile($number);
+
+// VoIP
+LocalRegex::isAfricom($number);
+LocalRegex::isDandemutande($number);
+LocalRegex::isLiquid($number);
+LocalRegex::isPowertel($number);
+LocalRegex::isTelco($number);
+LocalRegex::isTelone($number);
+LocalRegex::isZarnet($number);
+
+// Check if it's either one of the ones listed above
+LocalRegex::isZimVoIP($number);
+
+LocalRegex::isNationalId($id);
+LocalRegex::isNumberPlate($numberPlate);
+LocalRegex::isPassportNumber($passportNumber);
+LocalRegex::isDriversLicense($license);
+
+LocalRegex::isUrl('https://modestnerd.co')
+LocalRegex::isPassword('P@55WoRD')
+
+// Formatting Numbers
+LocalRegex::formatNumber('0771234567', FormatType::CountryCode) // 263771234567
+LocalRegex::formatNumber('0771234567', FormatType::CountryCodePlus) // +263771234567
+LocalRegex::formatNumber('263771234567', FormatType::Regular) // 0771234567
 ```
 
 ### Testing
@@ -40,7 +77,7 @@ If you discover any security related issues, please email iamngoni@modestnerd.co
 
 ## Credits
 
--   [Ngonidzashe Mangudya](https://github.com/modestnerd)
+-   [Ngonidzashe Mangudya](https://github.com/iamngoni)
 -   [All Contributors](../../contributors)
 
 ## License
